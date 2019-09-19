@@ -1,11 +1,24 @@
 #ifndef CURRENTCONDITIONDISPLAY_H
 #define CURRENTCONDITIONDISPLAY_H
 
+#include "iobserver.h"
+#include "idisplayelement.h"
+#include "isubject.h"
+#include <iostream>
 
-class CurrentConditionDisplay
+class CurrentConditionDisplay : public IObserver, public IDisplayElement
 {
+private:
+    float temperature;
+    float humidity;
+    float pressure;
+    ISubject *wthrData;
+
 public:
-    CurrentConditionDisplay();
+    CurrentConditionDisplay(ISubject *weatherData);
+
+    void display() override;
+    void update(float temp, float humidity, float pressure) override;
 };
 
 #endif // CURRENTCONDITIONDISPLAY_H
