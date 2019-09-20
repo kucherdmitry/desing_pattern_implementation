@@ -3,7 +3,7 @@
 
 #include "iobserver.h"
 #include "idisplayelement.h"
-#include "isubject.h"
+#include "weatherstation.h"
 #include <iostream>
 
 class CurrentConditionDisplay : public IObserver, public IDisplayElement
@@ -11,11 +11,10 @@ class CurrentConditionDisplay : public IObserver, public IDisplayElement
 private:
     float temperature;
     float humidity;
-    float pressure;
-    ISubject *wthrData;
 
 public:
-    CurrentConditionDisplay(ISubject *weatherData);
+    CurrentConditionDisplay(WeatherStation &weatherData);
+    ~CurrentConditionDisplay() override = default;
 
     void display() override;
     void update(float temp, float humidity, float pressure) override;

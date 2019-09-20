@@ -4,3 +4,8 @@ ISubject::ISubject()
 {
 
 }
+
+ISubject::~ISubject()
+{
+
+}

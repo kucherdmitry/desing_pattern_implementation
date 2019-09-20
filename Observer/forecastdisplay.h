@@ -3,11 +3,16 @@
 
 #include "iobserver.h"
 #include "idisplayelement.h"
+#include "weatherstation.h"
+#include <iostream>
 
 class ForecastDisplay : public IObserver, public IDisplayElement
 {
+private:
+    float pressure;
 public:
-    ForecastDisplay();
+    ForecastDisplay(WeatherStation &weatherData);
+    ~ForecastDisplay() override = default;
 
     void display() override;
     void update(float temp, float humidity, float pressure) override;

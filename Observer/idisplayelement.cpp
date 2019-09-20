@@ -4,3 +4,8 @@ IDisplayElement::IDisplayElement()
 {
 
 }
+
+IDisplayElement::~IDisplayElement()
+{
+
+}
