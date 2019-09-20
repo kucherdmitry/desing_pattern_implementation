@@ -7,7 +7,18 @@ ForecastDisplay::ForecastDisplay(WeatherStation &weatherData)
 
 void ForecastDisplay::display()
 {
-    std::cout << "Forecast pressure: " << this->pressure << std::endl;
+    if (this->pressure < 50)
+    {
+        std::cout << "Forecast: Rainy day" << std::endl;
+    }
+    else if (this->pressure >= 50 || this->pressure <= 70)
+    {
+        std::cout << "Forecast: Cloudy day" << std::endl;
+    }
+    else
+    {
+        std::cout << "Forecast: Sunny day" << std::endl;
+    }
 }
 
 void ForecastDisplay::update(float temp, float humidity, float pressure)
