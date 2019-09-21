@@ -7,10 +7,10 @@
 class AddonDecorator : public Beverage
 {
 public:
-    AddonDecorator(Beverage &beverage);
+    AddonDecorator();
 
-    std::string getDescription() override;
-    double getCost() override;
+    std::string getDescription() override = 0;
+    double getCost() override = 0;
 
 };
 

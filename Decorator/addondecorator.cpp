@@ -1,6 +1,5 @@
 #include "addondecorator.h"
 
-AddonDecorator::AddonDecorator(Beverage &beverage)
+AddonDecorator::AddonDecorator()
 {
-
 }

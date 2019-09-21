@@ -6,8 +6,10 @@
 
 class Milk : public AddonDecorator
 {
+private:
+    Beverage *beverage;
 public:
-    Milk();
+    Milk(Beverage *beverage);
 
     std::string getDescription() override;
     double getCost() override;
