@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         addondecorator.cpp \
         beverage.cpp \
+        caramel.cpp \
         darkroast.cpp \
         decaf.cpp \
         espresso.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 HEADERS += \
     addondecorator.h \
     beverage.h \
+    caramel.h \
     darkroast.h \
     decaf.h \
     espresso.h \
