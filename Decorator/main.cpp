@@ -26,7 +26,7 @@ int main()
     cout << darkRoast->getDescription() + " $" << darkRoast->getCost() << endl;
 //    cout << espresso->getDescription() + " $" << espresso->getCost() << endl;
 
-    cout << "\n\n";
+    cout << "\n";
 
     delete darkRoast;
 //    delete espresso;
