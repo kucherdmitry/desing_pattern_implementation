@@ -1,6 +1,7 @@
 #ifndef IDISPLAYELEMENT_H
 #define IDISPLAYELEMENT_H
 
+#include <iostream>
 
 class IDisplayElement
 {

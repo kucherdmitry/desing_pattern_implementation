@@ -14,7 +14,7 @@ private:
 
 public:
     CurrentConditionDisplay(WeatherStation &weatherData);
-    ~CurrentConditionDisplay() override = default;
+    ~CurrentConditionDisplay() override;
 
     void display() override;
     void update(float temp, float humidity, float pressure) override;

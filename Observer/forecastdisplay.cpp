@@ -2,7 +2,13 @@
 
 ForecastDisplay::ForecastDisplay(WeatherStation &weatherData)
 {
+    std::clog << "Construct class ForecastDisplay " << this << std::endl;
     weatherData.registerObserver(this);
+}
+
+ForecastDisplay::~ForecastDisplay()
+{
+    std::clog << "Destruct class ForecastDisplay " << this << std::endl;
 }
 
 void ForecastDisplay::display()

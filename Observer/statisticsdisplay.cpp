@@ -2,7 +2,13 @@
 
 StatisticsDisplay::StatisticsDisplay(WeatherStation &weatherData)
 {
+    std::clog << "Construct class StatisticsDisplay " << this << std::endl;
     weatherData.registerObserver(this);
+}
+
+StatisticsDisplay::~StatisticsDisplay()
+{
+    std::clog << "Destruct class StatisticsDisplay " << this << std::endl;
 }
 
 void StatisticsDisplay::display()

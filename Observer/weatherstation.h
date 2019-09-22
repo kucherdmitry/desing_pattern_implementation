@@ -15,6 +15,7 @@ private:
 
 public:
     WeatherStation();
+    ~WeatherStation() override;
 
     void registerObserver(IObserver *obs) override;
     void removeObserver(IObserver *obs) override;

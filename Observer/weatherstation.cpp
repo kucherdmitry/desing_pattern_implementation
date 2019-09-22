@@ -2,6 +2,12 @@
 
 WeatherStation::WeatherStation()
 {
+    std::clog << "Construct class WeatherStation " << this << std::endl;
+}
+
+WeatherStation::~WeatherStation()
+{
+    std::clog << "Destruct class WeatherStation " << this << std::endl;
 }
 
 void WeatherStation::registerObserver(IObserver *obs)

@@ -14,7 +14,7 @@ private:
     std::vector<float> temperature;
 public:
     StatisticsDisplay(WeatherStation &weatherData);
-    ~StatisticsDisplay() override = default;
+    ~StatisticsDisplay() override;
 
     void display() override;
     void update(float temp, float humidity, float pressure) override;

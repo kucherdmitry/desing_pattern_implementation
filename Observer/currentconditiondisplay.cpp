@@ -2,7 +2,13 @@
 
 CurrentConditionDisplay::CurrentConditionDisplay(WeatherStation &weatherData)
 {
+    std::clog << "Construct class CurrentConditionDisplay " << this << std::endl;
     weatherData.registerObserver(this);
+}
+
+CurrentConditionDisplay::~CurrentConditionDisplay()
+{
+    std::clog << "Destruct class CurrentConditionDisplay " << this << std::endl;
 }
 
 void CurrentConditionDisplay::display()

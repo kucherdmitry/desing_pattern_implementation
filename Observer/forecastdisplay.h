@@ -12,7 +12,7 @@ private:
     float pressure;
 public:
     ForecastDisplay(WeatherStation &weatherData);
-    ~ForecastDisplay() override = default;
+    ~ForecastDisplay() override;
 
     void display() override;
     void update(float temp, float humidity, float pressure) override;
