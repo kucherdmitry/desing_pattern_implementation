@@ -2,7 +2,6 @@
 #define MILK_H
 
 #include "addondecorator.h"
-#include <string>
 
 class Milk : public AddonDecorator
 {
@@ -10,6 +9,7 @@ private:
     Beverage *beverage;
 public:
     Milk(Beverage *beverage);
+    ~Milk() override;
 
     std::string getDescription() override;
     double getCost() override;

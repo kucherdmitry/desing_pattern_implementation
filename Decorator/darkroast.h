@@ -2,12 +2,12 @@
 #define DARKROAST_H
 
 #include "beverage.h"
-#include <string>
 
 class DarkRoast : public Beverage
 {
 public:
     DarkRoast();
+    ~DarkRoast() override;
 
     std::string getDescription() override;
     double getCost() override;

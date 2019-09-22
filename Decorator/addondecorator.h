@@ -2,12 +2,12 @@
 #define ADDONDECORATOR_H
 
 #include "beverage.h"
-#include <string>
 
 class AddonDecorator : public Beverage
 {
 public:
     AddonDecorator();
+    ~AddonDecorator() override;
 
     std::string getDescription() override = 0;
     double getCost() override = 0;

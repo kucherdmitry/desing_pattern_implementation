@@ -2,6 +2,7 @@
 #define BEVERAGE_H
 
 #include <string>
+#include <iostream>
 
 class Beverage
 {

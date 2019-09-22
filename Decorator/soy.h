@@ -1,18 +1,18 @@
-#ifndef MOCHA_H
-#define MOCHA_H
+#ifndef SOY_H
+#define SOY_H
 
 #include "addondecorator.h"
 
-class Mocha : public AddonDecorator
+class Soy : public AddonDecorator
 {
 private:
     Beverage *beverage;
 public:
-    Mocha(Beverage *beverage);
-    ~Mocha() override;
+    Soy(Beverage *beverage);
+    ~Soy() override;
 
     std::string getDescription() override;
     double getCost() override;
 };
 
-#endif // MOCHA_H
+#endif // SOY_H
