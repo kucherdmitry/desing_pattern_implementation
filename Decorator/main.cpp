@@ -29,8 +29,6 @@ int main()
     decaf = new Soy(decaf);
     decaf = new Caramel(decaf);
 
-    cout << "\n";
-
     cout << darkRoast->getDescription() + " $" << darkRoast->getCost() << endl;
     cout << espresso->getDescription() + " $" << espresso->getCost() << endl;
     cout << decaf->getDescription() + " $" << decaf->getCost() << endl;
@@ -40,8 +38,6 @@ int main()
     delete darkRoast;
     delete espresso;
     delete decaf;
-
-    cout << "\n";
 
     return 0;
 }

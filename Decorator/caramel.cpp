@@ -2,13 +2,11 @@
 
 Caramel::Caramel(Beverage *beverage)
 {
-    std::clog << "Construct class Caramel " << this << "\n";
     this->beverage = beverage;
 }
 
 Caramel::~Caramel()
 {
-    std::clog << "Destruct class Caramel " << this << "\n";
     delete this->beverage;
 }
 

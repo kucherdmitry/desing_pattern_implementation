@@ -7,7 +7,6 @@ class Decaf : public Beverage
 {
 public:
     Decaf();
-    ~Decaf() override;
 
     std::string getDescription() override;
     double getCost() override;

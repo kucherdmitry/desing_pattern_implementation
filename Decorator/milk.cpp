@@ -2,13 +2,11 @@
 
 Milk::Milk(Beverage *beverage)
 {
-    std::clog << "Construct class Milk " << this << "\n";
     this->beverage = beverage;
 }
 
 Milk::~Milk()
 {
-    std::clog << "Destruct class Milk " << this << "\n";
     delete this->beverage;
 }
 

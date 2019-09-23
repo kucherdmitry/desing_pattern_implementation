@@ -2,13 +2,11 @@
 
 Mocha::Mocha(Beverage *beverage)
 {
-    std::clog << "Construct class Mocha " << this << "\n";
     this->beverage = beverage;
 }
 
 Mocha::~Mocha()
 {
-    std::clog << "Destruct class Mocha " << this << "\n";
     delete this->beverage;
 }
 

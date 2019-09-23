@@ -8,7 +8,7 @@ class Beverage
 {
 public:
     Beverage();
-    virtual ~Beverage();
+    virtual ~Beverage() = default;
 
     virtual std::string getDescription() = 0;
     virtual double getCost() = 0;

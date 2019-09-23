@@ -7,7 +7,6 @@ class Espresso : public Beverage
 {
 public:
     Espresso();
-    ~Espresso() override;
 
     std::string getDescription() override;
     double getCost() override;
