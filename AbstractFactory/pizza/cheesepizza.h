@@ -6,7 +6,9 @@
 class CheesePizza : public Pizza
 {
 public:
-    CheesePizza();
+    CheesePizza(PizzaIngredientFactory *ingredient);
+
+    void prepare() override;
 };
 
 #endif // CHEESEPIZZA_H
