@@ -4,3 +4,8 @@ Cheese::Cheese()
 {
 
 }
+
+Cheese::~Cheese()
+{
+
+}

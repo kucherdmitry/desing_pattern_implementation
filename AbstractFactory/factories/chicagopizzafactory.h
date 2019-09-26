@@ -1,6 +1,7 @@
 #ifndef CHICAGOPIZZAFACTORY_H
 #define CHICAGOPIZZAFACTORY_H
 
+#include "interfaces/pizzashop.h"
 
 class ChicagoPizzaFactory : public PizzaShop
 {
