@@ -12,12 +12,12 @@
 class Pizza
 {
 protected:
-    std::string name;
-    Dough *dough;
-    Sause *sauce;
-    Cheese *cheese;
-    Clams *clam;
-    PizzaIngredientFactory *ingredientFactory;
+    std::string name = "";
+    Dough *dough = nullptr;
+    Sause *sauce = nullptr;
+    Cheese *cheese = nullptr;
+    Clams *clam = nullptr;
+    PizzaIngredientFactory *ingredientFactory = nullptr;
 public:
     Pizza();
     virtual ~Pizza();
