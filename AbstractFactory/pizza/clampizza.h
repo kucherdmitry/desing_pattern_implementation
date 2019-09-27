@@ -7,6 +7,7 @@ class ClamPizza : public Pizza
 {
 public:
     ClamPizza(PizzaIngredientFactory *ingredient);
+    ~ClamPizza() override;
 
     void prepare() override;
 };

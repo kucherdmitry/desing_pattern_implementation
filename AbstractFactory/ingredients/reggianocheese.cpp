@@ -2,12 +2,6 @@
 
 ReggianoCheese::ReggianoCheese()
 {
-
-}
-
-ReggianoCheese::~ReggianoCheese()
-{
-
 }
 
 std::string ReggianoCheese::print()

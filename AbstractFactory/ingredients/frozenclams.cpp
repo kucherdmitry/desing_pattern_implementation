@@ -2,12 +2,6 @@
 
 FrozenClams::FrozenClams()
 {
-
-}
-
-FrozenClams::~FrozenClams()
-{
-
 }
 
 std::string FrozenClams::print()

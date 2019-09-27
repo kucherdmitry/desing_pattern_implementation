@@ -7,7 +7,7 @@ class PlumTomatoSause : public Sause
 {
 public:
     PlumTomatoSause();
-    ~PlumTomatoSause() override;
+    ~PlumTomatoSause() override = default;
 
     std::string print() override;
 };

@@ -2,10 +2,4 @@
 
 Cheese::Cheese()
 {
-
-}
-
-Cheese::~Cheese()
-{
-
 }

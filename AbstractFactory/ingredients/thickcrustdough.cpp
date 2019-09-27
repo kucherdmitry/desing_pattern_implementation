@@ -2,12 +2,6 @@
 
 ThickCrustDough::ThickCrustDough()
 {
-
-}
-
-ThickCrustDough::~ThickCrustDough()
-{
-
 }
 
 std::string ThickCrustDough::print()

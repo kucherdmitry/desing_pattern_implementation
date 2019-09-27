@@ -7,7 +7,7 @@ class Cheese
 {
 public:
     Cheese();
-    virtual ~Cheese();
+    virtual ~Cheese() = default;
 
     virtual std::string print() = 0;
 };

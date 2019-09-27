@@ -2,12 +2,6 @@
 
 Pizza::Pizza()
 {
-
-}
-
-Pizza::~Pizza()
-{
-
 }
 
 void Pizza::bake()

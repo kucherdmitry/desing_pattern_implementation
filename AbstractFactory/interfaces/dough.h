@@ -7,7 +7,7 @@ class Dough
 {
 public:
     Dough();
-    virtual ~Dough();
+    virtual ~Dough() = default;
 
     virtual std::string print() = 0;
 };

@@ -6,7 +6,8 @@
 class Clams
 {
 public:
-    virtual ~Clams();
+    Clams();
+    virtual ~Clams() = default;
 
     virtual std::string print() = 0;
 };

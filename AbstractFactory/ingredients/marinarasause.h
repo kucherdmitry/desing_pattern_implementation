@@ -7,7 +7,7 @@ class MarinaraSause : public Sause
 {
 public:
     MarinaraSause();
-    ~MarinaraSause() override;
+    ~MarinaraSause() override = default;
 
     std::string print() override;
 };

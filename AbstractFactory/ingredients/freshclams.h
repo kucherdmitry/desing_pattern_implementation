@@ -7,7 +7,7 @@ class FreshClams : public Clams
 {
 public:
     FreshClams();
-    ~FreshClams() override;
+    ~FreshClams() override = default;
 
     std::string print() override;
 };

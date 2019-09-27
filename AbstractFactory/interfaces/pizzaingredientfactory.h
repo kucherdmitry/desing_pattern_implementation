@@ -11,7 +11,7 @@ class PizzaIngredientFactory
 {
 public:
     PizzaIngredientFactory();
-    virtual ~PizzaIngredientFactory();
+    virtual ~PizzaIngredientFactory() = default;
 
     virtual Dough* createDough() = 0;
     virtual Cheese* createCheese() = 0;

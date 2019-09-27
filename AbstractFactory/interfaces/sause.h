@@ -7,7 +7,7 @@ class Sause
 {
 public:
     Sause();
-    virtual ~Sause();
+    virtual ~Sause() = default;
 
     virtual std::string print() = 0;
 };

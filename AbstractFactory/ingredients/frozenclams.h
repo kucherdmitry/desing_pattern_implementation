@@ -7,7 +7,7 @@ class FrozenClams : public Clams
 {
 public:
     FrozenClams();
-    ~FrozenClams() override;
+    ~FrozenClams() override = default;
 
     std::string print() override;
 };

@@ -2,12 +2,6 @@
 
 MarinaraSause::MarinaraSause()
 {
-
-}
-
-MarinaraSause::~MarinaraSause()
-{
-
 }
 
 std::string MarinaraSause::print()

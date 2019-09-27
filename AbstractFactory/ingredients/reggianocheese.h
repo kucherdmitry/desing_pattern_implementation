@@ -7,7 +7,7 @@ class ReggianoCheese : public Cheese
 {
 public:
     ReggianoCheese();
-    ~ReggianoCheese() override;
+    ~ReggianoCheese() override = default;
 
     std::string print() override;
 };

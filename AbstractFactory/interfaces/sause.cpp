@@ -2,5 +2,4 @@
 
 Sause::Sause()
 {
-
 }

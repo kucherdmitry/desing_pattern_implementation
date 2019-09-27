@@ -7,7 +7,7 @@ class ThinCrustDough : public Dough
 {
 public:
     ThinCrustDough();
-    ~ThinCrustDough() override;
+    ~ThinCrustDough() override = default;
 
     std::string print() override;
 };

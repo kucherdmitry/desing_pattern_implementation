@@ -20,7 +20,7 @@ protected:
     PizzaIngredientFactory *ingredientFactory = nullptr;
 public:
     Pizza();
-    virtual ~Pizza();
+    virtual ~Pizza() = default;
 
     virtual void prepare() = 0;
     void bake();

@@ -5,16 +5,17 @@
 
 enum PizzaType
 {
-    cheesePizza, clumPizza
+    cheesePizza, clamPizza
 };
 
 class PizzaShop
 {
 protected:
+    Pizza *pizza;
     virtual Pizza* createPizza(PizzaType type) = 0;
 public:
     PizzaShop();
-    virtual ~PizzaShop();
+    virtual ~PizzaShop() = default;
 
     virtual void orderPizza(PizzaType type) = 0;
 };

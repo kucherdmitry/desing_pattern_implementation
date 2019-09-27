@@ -2,5 +2,4 @@
 
 Clams::Clams()
 {
-
 }
