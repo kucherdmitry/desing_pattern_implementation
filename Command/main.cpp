@@ -13,30 +13,29 @@ using namespace std;
 
 int main()
 {
-    RemoteControl *remote = new RemoteControl;
+    unique_ptr<RemoteControl> remote (new RemoteControl);
 
-    ApplianceControl *app = new ApplianceControl("Washing Machine");
-    CeilingFan *ceilFan = new CeilingFan("Bedroom");
+    shared_ptr<ApplianceControl> app (new ApplianceControl("Washing Machine"));
+    shared_ptr<CeilingFan> ceilFan (new CeilingFan("Bedroom"));
 
-    ApplianceOnCommand *appOnCommand = new ApplianceOnCommand(app);
-    ApplianceOffCommand *appOffCommand = new ApplianceOffCommand(app);
-    CeilingFanHighCommand *ceilFanHigh = new CeilingFanHighCommand(ceilFan);
-    CeilingFanMediumCommand *ceilFanMedium = new CeilingFanMediumCommand(ceilFan);
-    CeilingFanLowCommand *ceilFanLow = new CeilingFanLowCommand(ceilFan);
-    CeilingFanOffCommand *ceilFanOff = new CeilingFanOffCommand(ceilFan);
+    unique_ptr<ICommand> appOnCommand (new ApplianceOnCommand(app));
+    unique_ptr<ICommand> appOffCommand (new ApplianceOffCommand(app));
+
+    unique_ptr<ICommand> ceilFanHigh(new CeilingFanHighCommand(ceilFan));
+    unique_ptr<ICommand> ceilFanMedium (new CeilingFanMediumCommand(ceilFan));
+    unique_ptr<ICommand> ceilFanLow (new CeilingFanLowCommand(ceilFan));
+    unique_ptr<ICommand> ceilFanOff (new CeilingFanOffCommand(ceilFan));
 
     remote->setCommand(0, appOnCommand, appOffCommand);
     remote->setCommand(1, ceilFanHigh, ceilFanOff);
     remote->setCommand(2, ceilFanMedium, ceilFanOff);
     remote->setCommand(3, ceilFanLow, ceilFanOff);
 
-    remote->onButtonWasPushed(0);
-    remote->offButtonWasPushed(0);
-
     remote->onButtonWasPushed(1);
     remote->onButtonWasPushed(2);
     remote->onButtonWasPushed(3);
-    remote->offButtonWasPushed(1);
+
+    remote->offButtonWasPushed(3);
 
     return 0;
 }

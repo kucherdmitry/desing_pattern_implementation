@@ -1,11 +1,24 @@
 #include "stereosetradiocommand.h"
 
-StereoSetRadioCommand::StereoSetRadioCommand(Stereo *stereo)
+StereoSetRadioCommand::StereoSetRadioCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoSetRadioCommand::~StereoSetRadioCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoSetRadioCommand::execute()
 {
-    this->stereo->setRadio();
+    this->obj->setRadio();
+}
+
+void StereoSetRadioCommand::unexecute()
+{
+
 }

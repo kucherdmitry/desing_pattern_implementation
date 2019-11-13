@@ -1,13 +1,21 @@
 #include "hottubcirculatecommand.h"
 
-HottubCirculateCommand::HottubCirculateCommand(Hottub *hottub)
+HottubCirculateCommand::HottubCirculateCommand(Hottub *obj)
 {
-    this->hottub = hottub;
+    this->obj = obj;
+}
+
+HottubCirculateCommand::~HottubCirculateCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void HottubCirculateCommand::execute()
 {
-    this->hottub->circulate();
+    this->obj->circulate();
 }
 
 void HottubCirculateCommand::unexecute()

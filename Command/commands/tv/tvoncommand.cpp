@@ -1,11 +1,24 @@
 #include "tvoncommand.h"
 
-TVOnCommand::TVOnCommand(TV *tv)
+TVOnCommand::TVOnCommand(TV *obj)
 {
-    this->tv = tv;
+    this->obj = obj;
+}
+
+TVOnCommand::~TVOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void TVOnCommand::execute()
 {
-    this->tv->on();
+    this->obj->on();
+}
+
+void TVOnCommand::unexecute()
+{
+
 }

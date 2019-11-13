@@ -6,12 +6,14 @@
 class StereoSetDVDCommand : public ICommand
 {
 public:
-    StereoSetDVDCommand(Stereo *stereo);
+    StereoSetDVDCommand(Stereo *obj);
+    ~StereoSetDVDCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Stereo *stereo = nullptr;
+    Stereo *obj = nullptr;
 };
 
 #endif // STEREOSETDVDCOMMAND_H

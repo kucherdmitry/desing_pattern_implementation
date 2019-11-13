@@ -6,14 +6,14 @@
 class ApplianceOnCommand : public ICommand
 {
 public:
-    ApplianceOnCommand(ApplianceControl *appControl);
-    ~ApplianceOnCommand() override = default;
+    ApplianceOnCommand(std::shared_ptr<ApplianceControl> &obj);
+    ~ApplianceOnCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    ApplianceControl *appControl = nullptr;
+    std::shared_ptr<ApplianceControl> obj = nullptr;
 };
 
 #endif // APPLIANCEONCOMMAND_H

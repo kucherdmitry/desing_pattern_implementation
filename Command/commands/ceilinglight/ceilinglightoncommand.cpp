@@ -1,13 +1,21 @@
 #include "ceilinglightoncommand.h"
 
-CeilingLightOnCommand::CeilingLightOnCommand(CeilingLight *ceilLight)
+CeilingLightOnCommand::CeilingLightOnCommand(CeilingLight *obj)
 {
-    this->ceilLight = ceilLight;
+    this->obj = obj;
+}
+
+CeilingLightOnCommand::~CeilingLightOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void CeilingLightOnCommand::execute()
 {
-    this->ceilLight->on();
+    this->obj->on();
 }
 
 void CeilingLightOnCommand::unexecute()

@@ -6,12 +6,14 @@
 class StereoOnCommand : public ICommand
 {
 public:
-    StereoOnCommand(Stereo *stereo);
+    StereoOnCommand(Stereo *obj);
+    ~StereoOnCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Stereo *stereo = nullptr;
+    Stereo *obj = nullptr;
 };
 
 #endif // STEREOONCOMMAND_H

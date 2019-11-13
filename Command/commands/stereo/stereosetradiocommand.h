@@ -6,12 +6,14 @@
 class StereoSetRadioCommand : public ICommand
 {
 public:
-    StereoSetRadioCommand(Stereo *stereo);
+    StereoSetRadioCommand(Stereo *obj);
+    ~StereoSetRadioCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Stereo *stereo = nullptr;
+    Stereo *obj = nullptr;
 };
 
 #endif // STEREOSETRADIOCOMMAND_H

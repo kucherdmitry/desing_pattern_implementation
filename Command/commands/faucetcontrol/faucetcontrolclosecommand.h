@@ -6,14 +6,14 @@
 class FaucetControlCloseCommand : public ICommand
 {
 public:
-    FaucetControlCloseCommand(FaucetControl *faucetControl);
-    ~FaucetControlCloseCommand() override = default;
+    FaucetControlCloseCommand(FaucetControl *obj);
+    ~FaucetControlCloseCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    FaucetControl *faucetControl = nullptr;
+    FaucetControl *obj = nullptr;
 };
 
 #endif // FAUCETCONTROLCLOSECOMMAND_H

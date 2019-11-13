@@ -1,13 +1,21 @@
 #include "gardenlightmanualoncommand.h"
 
-GardenLightManualOnCommand::GardenLightManualOnCommand(GardenLight *gardenLight)
+GardenLightManualOnCommand::GardenLightManualOnCommand(GardenLight *obj)
 {
-    this->gardenLight = gardenLight;
+    this->obj = obj;
+}
+
+GardenLightManualOnCommand::~GardenLightManualOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void GardenLightManualOnCommand::execute()
 {
-    this->gardenLight->manualOn();
+    this->obj->manualOn();
 }
 
 void GardenLightManualOnCommand::unexecute()

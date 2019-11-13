@@ -6,14 +6,14 @@
 class GarageDoorDownCommand : public ICommand
 {
 public:
-    GarageDoorDownCommand(GarageDoor *garageDoor);
-    ~GarageDoorDownCommand() override = default;
+    GarageDoorDownCommand(GarageDoor *obj);
+    ~GarageDoorDownCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    GarageDoor *garageDoor = nullptr;
+    GarageDoor *obj = nullptr;
 };
 
 #endif // GARAGEDOORDOWNCOMMAND_H

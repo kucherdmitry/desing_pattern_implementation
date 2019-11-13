@@ -6,14 +6,14 @@
 class HottubCirculateCommand : public ICommand
 {
 public:
-    HottubCirculateCommand(Hottub *hottub);
-    ~HottubCirculateCommand() override = default;
+    HottubCirculateCommand(Hottub *obj);
+    ~HottubCirculateCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    Hottub *hottub = nullptr;
+    Hottub *obj = nullptr;
 };
 
 #endif // HOTTUBCIRCULATECOMMAND_H

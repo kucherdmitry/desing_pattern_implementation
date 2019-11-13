@@ -6,12 +6,14 @@
 class SprinklerWaterOnCommand : public ICommand
 {
 public:
-    SprinklerWaterOnCommand(Sprinkler *sprinkler);
+    SprinklerWaterOnCommand(Sprinkler *obj);
+    ~SprinklerWaterOnCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Sprinkler *sprinkler = nullptr;
+    Sprinkler *obj = nullptr;
 };
 
 #endif // SPRINKLERWATERONCOMMAND_H

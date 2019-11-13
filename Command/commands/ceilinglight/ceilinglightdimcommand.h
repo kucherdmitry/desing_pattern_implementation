@@ -6,14 +6,14 @@
 class CeilingLightDimCommand : public ICommand
 {
 public:
-    CeilingLightDimCommand(CeilingLight *ceilLight);
-    ~CeilingLightDimCommand() override = default;
+    CeilingLightDimCommand(CeilingLight *obj);
+    ~CeilingLightDimCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    CeilingLight *ceilLight = nullptr;
+    CeilingLight *obj = nullptr;
 };
 
 #endif // CEILINGLIGHTDIMCOMMAND_H

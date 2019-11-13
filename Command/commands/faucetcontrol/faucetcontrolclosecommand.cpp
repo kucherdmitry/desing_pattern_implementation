@@ -1,13 +1,21 @@
 #include "faucetcontrolclosecommand.h"
 
-FaucetControlCloseCommand::FaucetControlCloseCommand(FaucetControl *faucetControl)
+FaucetControlCloseCommand::FaucetControlCloseCommand(FaucetControl *obj)
 {
-    this->faucetControl = faucetControl;
+    this->obj = obj;
+}
+
+FaucetControlCloseCommand::~FaucetControlCloseCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void FaucetControlCloseCommand::execute()
 {
-    this->faucetControl->closeValue();
+    this->obj->closeValue();
 }
 
 void FaucetControlCloseCommand::unexecute()

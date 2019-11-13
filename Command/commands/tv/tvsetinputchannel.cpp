@@ -1,11 +1,24 @@
 #include "tvsetinputchannel.h"
 
-TVSetInputChannel::TVSetInputChannel(TV *tv)
+TVSetInputChannel::TVSetInputChannel(TV *obj)
 {
-    this->tv = tv;
+    this->obj = obj;
+}
+
+TVSetInputChannel::~TVSetInputChannel()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void TVSetInputChannel::execute()
 {
-    this->tv->setInputChannel();
+    this->obj->setInputChannel();
+}
+
+void TVSetInputChannel::unexecute()
+{
+
 }

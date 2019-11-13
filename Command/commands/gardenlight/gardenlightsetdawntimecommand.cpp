@@ -1,13 +1,21 @@
 #include "gardenlightsetdawntimecommand.h"
 
-GardenLightSetDawnTimeCommand::GardenLightSetDawnTimeCommand(GardenLight *gardenLight)
+GardenLightSetDawnTimeCommand::GardenLightSetDawnTimeCommand(GardenLight *obj)
 {
-    this->gardenLight = gardenLight;
+    this->obj = obj;
+}
+
+GardenLightSetDawnTimeCommand::~GardenLightSetDawnTimeCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void GardenLightSetDawnTimeCommand::execute()
 {
-    this->gardenLight->setDawnTime();
+    this->obj->setDawnTime();
 }
 
 void GardenLightSetDawnTimeCommand::unexecute()

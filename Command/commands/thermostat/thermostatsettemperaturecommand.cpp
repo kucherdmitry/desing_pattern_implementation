@@ -1,11 +1,24 @@
 #include "thermostatsettemperaturecommand.h"
 
-ThermostatSetTemperatureCommand::ThermostatSetTemperatureCommand(Thermostat *thermostat)
+ThermostatSetTemperatureCommand::ThermostatSetTemperatureCommand(Thermostat *obj)
 {
-    this->thermostat = thermostat;
+    this->obj = obj;
+}
+
+ThermostatSetTemperatureCommand::~ThermostatSetTemperatureCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void ThermostatSetTemperatureCommand::execute()
 {
-    this->thermostat->setTemperature();
+    this->obj->setTemperature();
+}
+
+void ThermostatSetTemperatureCommand::unexecute()
+{
+
 }

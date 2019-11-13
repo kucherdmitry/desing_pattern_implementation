@@ -1,11 +1,24 @@
 #include "tvoffcommand.h"
 
-TVOffCommand::TVOffCommand(TV *tv)
+TVOffCommand::TVOffCommand(TV *obj)
 {
-    this->tv = tv;
+    this->obj = obj;
+}
+
+TVOffCommand::~TVOffCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void TVOffCommand::execute()
 {
-    this->tv->off();
+    this->obj->off();
+}
+
+void TVOffCommand::unexecute()
+{
+
 }

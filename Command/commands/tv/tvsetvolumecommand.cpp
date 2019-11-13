@@ -1,11 +1,24 @@
 #include "tvsetvolumecommand.h"
 
-TVSetVolumeCommand::TVSetVolumeCommand(TV *tv)
+TVSetVolumeCommand::TVSetVolumeCommand(TV *obj)
 {
-    this->tv = tv;
+    this->obj = obj;
+}
+
+TVSetVolumeCommand::~TVSetVolumeCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void TVSetVolumeCommand::execute()
 {
-    this->tv->setVolume();
+    this->obj->setVolume();
+}
+
+void TVSetVolumeCommand::unexecute()
+{
+
 }

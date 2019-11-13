@@ -1,13 +1,21 @@
 #include "gardenlightsetdusttimecommand.h"
 
-GardenLightSetDustTimeCommand::GardenLightSetDustTimeCommand(GardenLight *gardenLight)
+GardenLightSetDustTimeCommand::GardenLightSetDustTimeCommand(GardenLight *obj)
 {
-    this->gardenLight = gardenLight;
+    this->obj = obj;
+}
+
+GardenLightSetDustTimeCommand::~GardenLightSetDustTimeCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void GardenLightSetDustTimeCommand::execute()
 {
-    this->gardenLight->setDawnTime();
+    this->obj->setDawnTime();
 }
 
 void GardenLightSetDustTimeCommand::unexecute()

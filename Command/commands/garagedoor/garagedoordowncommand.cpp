@@ -1,13 +1,21 @@
 #include "garagedoordowncommand.h"
 
-GarageDoorDownCommand::GarageDoorDownCommand(GarageDoor *garageDoor)
+GarageDoorDownCommand::GarageDoorDownCommand(GarageDoor *obj)
 {
-    this->garageDoor = garageDoor;
+    this->obj = obj;
+}
+
+GarageDoorDownCommand::~GarageDoorDownCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void GarageDoorDownCommand::execute()
 {
-    this->garageDoor->down();
+    this->obj->down();
 }
 
 void GarageDoorDownCommand::unexecute()

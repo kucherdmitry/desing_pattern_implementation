@@ -6,14 +6,14 @@
 class CeilingLightOnCommand : public ICommand
 {
 public:
-    CeilingLightOnCommand(CeilingLight *ceilLight);
-    ~CeilingLightOnCommand() override = default;
+    CeilingLightOnCommand(CeilingLight *obj);
+    ~CeilingLightOnCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    CeilingLight *ceilLight = nullptr;
+    CeilingLight *obj = nullptr;
 
 };
 

@@ -1,13 +1,17 @@
 #include "applianceoffcommand.h"
 
-ApplianceOffCommand::ApplianceOffCommand(ApplianceControl *appControl)
+ApplianceOffCommand::ApplianceOffCommand(std::shared_ptr<ApplianceControl> &obj)
 {
-    this->appControl = appControl;
+    this->obj = obj;
+}
+
+ApplianceOffCommand::~ApplianceOffCommand()
+{
 }
 
 void ApplianceOffCommand::execute()
 {
-    this->appControl->off();
+    this->obj.get()->off();
 }
 
 void ApplianceOffCommand::unexecute()

@@ -1,11 +1,24 @@
 #include "stereooffcommand.h"
 
-StereoOffCommand::StereoOffCommand(Stereo *stereo)
+StereoOffCommand::StereoOffCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoOffCommand::~StereoOffCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoOffCommand::execute()
 {
-    this->stereo->off();
+    this->obj->off();
+}
+
+void StereoOffCommand::unexecute()
+{
+
 }

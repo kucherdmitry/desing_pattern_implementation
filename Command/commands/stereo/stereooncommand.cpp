@@ -1,11 +1,24 @@
 #include "stereooncommand.h"
 
-StereoOnCommand::StereoOnCommand(Stereo *stereo)
+StereoOnCommand::StereoOnCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoOnCommand::~StereoOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoOnCommand::execute()
 {
-    this->stereo->on();
+    this->obj->on();
+}
+
+void StereoOnCommand::unexecute()
+{
+
 }

@@ -3,6 +3,12 @@
 ApplianceControl::ApplianceControl(std::string name)
 {
     this->name = name;
+    std::cout << "AppControl " << this->name << " " << this << " constructed" << std::endl;
+}
+
+ApplianceControl::~ApplianceControl()
+{
+    std::cout << "AppControl " << this->name << " " << this << " destructed" << std::endl;
 }
 
 void ApplianceControl::on()

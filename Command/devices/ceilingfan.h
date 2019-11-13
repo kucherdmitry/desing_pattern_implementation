@@ -6,6 +6,7 @@ class CeilingFan
 {
 public:
     CeilingFan(std::string name);
+    ~CeilingFan();
 
     void high();
     void medium();

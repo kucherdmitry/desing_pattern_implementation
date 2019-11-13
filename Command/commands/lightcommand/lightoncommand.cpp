@@ -1,11 +1,24 @@
 #include "lightoncommand.h"
 
-LightOnCommand::LightOnCommand(Light *light)
+LightOnCommand::LightOnCommand(Light *obj)
 {
-    this->light = light;
+    this->obj = obj;
+}
+
+LightOnCommand::~LightOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void LightOnCommand::execute()
 {
-    this->light->on();
+    this->obj->on();
+}
+
+void LightOnCommand::unexecute()
+{
+
 }

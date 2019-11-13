@@ -6,12 +6,13 @@
 class OutdoorLightOffCommand : public ICommand
 {
 public:
-    OutdoorLightOffCommand(OutdoorLight *outdoorLight);
+    OutdoorLightOffCommand(OutdoorLight *obj);
+    ~OutdoorLightOffCommand() override;
 
     void execute() override;
 
 private:
-    OutdoorLight *outdoorLight = nullptr;
+    OutdoorLight *obj = nullptr;
 };
 
 #endif // OUTDOORLIGHTOFFCOMMAND_H

@@ -6,14 +6,14 @@
 class HottubSetTemperatureCommand : public ICommand
 {
 public:
-    HottubSetTemperatureCommand(Hottub *hottub);
-    ~HottubSetTemperatureCommand() override = default;
+    HottubSetTemperatureCommand(Hottub *obj);
+    ~HottubSetTemperatureCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    Hottub *hottub = nullptr;
+    Hottub *obj = nullptr;
 };
 
 #endif // HOTTUBSETTEMPERATURECOMMAND_H

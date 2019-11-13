@@ -6,6 +6,7 @@ class ApplianceControl
 {
 public:
     ApplianceControl(std::string name);
+    ~ApplianceControl();
 
     void on();
     void off();

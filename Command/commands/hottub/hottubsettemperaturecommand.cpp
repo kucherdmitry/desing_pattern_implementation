@@ -1,13 +1,21 @@
 #include "hottubsettemperaturecommand.h"
 
-HottubSetTemperatureCommand::HottubSetTemperatureCommand(Hottub *hottub)
+HottubSetTemperatureCommand::HottubSetTemperatureCommand(Hottub *obj)
 {
-    this->hottub = hottub;
+    this->obj = obj;
+}
+
+HottubSetTemperatureCommand::~HottubSetTemperatureCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void HottubSetTemperatureCommand::execute()
 {
-    this->hottub->setTemperature();
+    this->obj->setTemperature();
 }
 
 void HottubSetTemperatureCommand::unexecute()

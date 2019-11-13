@@ -1,11 +1,19 @@
 #include "outdoorlightoncommand.h"
 
-OutdoorLightOnCommand::OutdoorLightOnCommand(OutdoorLight *outdoorLight)
+OutdoorLightOnCommand::OutdoorLightOnCommand(OutdoorLight *obj)
 {
-    this->outdoorLight = outdoorLight;
+    this->obj = obj;
+}
+
+OutdoorLightOnCommand::~OutdoorLightOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void OutdoorLightOnCommand::execute()
 {
-    this->outdoorLight->on();
+    this->obj->on();
 }

@@ -1,13 +1,21 @@
 #include "garagedoorlightoffcommand.h"
 
-GarageDoorLightOffCommand::GarageDoorLightOffCommand(GarageDoor *garageDoor)
+GarageDoorLightOffCommand::GarageDoorLightOffCommand(GarageDoor *obj)
 {
-    this->garageDoor = garageDoor;
+    this->obj = obj;
+}
+
+GarageDoorLightOffCommand::~GarageDoorLightOffCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void GarageDoorLightOffCommand::execute()
 {
-    this->garageDoor->lightOff();
+    this->obj->lightOff();
 }
 
 void GarageDoorLightOffCommand::unexecute()

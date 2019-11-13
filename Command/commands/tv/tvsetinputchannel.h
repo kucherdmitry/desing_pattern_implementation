@@ -6,12 +6,14 @@
 class TVSetInputChannel : public ICommand
 {
 public:
-    TVSetInputChannel(TV *tv);
+    TVSetInputChannel(TV *obj);
+    ~TVSetInputChannel() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    TV *tv = nullptr;
+    TV *obj = nullptr;
 };
 
 #endif // TVSETINPUTCHANNEL_H

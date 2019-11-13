@@ -6,12 +6,14 @@
 class StereoSetVolumeCommand : public ICommand
 {
 public:
-    StereoSetVolumeCommand(Stereo *stereo);
+    StereoSetVolumeCommand(Stereo *obj);
+    ~StereoSetVolumeCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Stereo *stereo = nullptr;
+    Stereo *obj = nullptr;
 };
 
 #endif // STEREOSETVOLUMECOMMAND_H

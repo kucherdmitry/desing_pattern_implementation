@@ -1,11 +1,19 @@
 #include "outdoorlightoffcommand.h"
 
-OutdoorLightOffCommand::OutdoorLightOffCommand(OutdoorLight *outdoorLight)
+OutdoorLightOffCommand::OutdoorLightOffCommand(OutdoorLight *obj)
 {
-    this->outdoorLight = outdoorLight;
+    this->obj = obj;
+}
+
+OutdoorLightOffCommand::~OutdoorLightOffCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void OutdoorLightOffCommand::execute()
 {
-    this->outdoorLight->off();
+    this->obj->off();
 }

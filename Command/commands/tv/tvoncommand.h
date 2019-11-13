@@ -6,12 +6,14 @@
 class TVOnCommand : public ICommand
 {
 public:
-    TVOnCommand(TV *tv);
+    TVOnCommand(TV *obj);
+    ~TVOnCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    TV *tv = nullptr;
+    TV *obj = nullptr;
 };
 
 #endif // TVONCOMMAND_H

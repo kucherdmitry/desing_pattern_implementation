@@ -3,6 +3,12 @@
 CeilingFan::CeilingFan(std::string name)
 {
     this->name = name;
+    std::cout << "CeilFan " << this->name << " " << this << " constructed" << std::endl;
+}
+
+CeilingFan::~CeilingFan()
+{
+    std::cout << "CeilFan " << this->name << " " << this << " destructed" << std::endl;
 }
 
 void CeilingFan::high()

@@ -6,12 +6,14 @@
 class LightOffCommand : public ICommand
 {
 public:
-    LightOffCommand(Light *light);
+    LightOffCommand(Light *obj);
+    ~LightOffCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Light *light = nullptr;
+    Light *obj = nullptr;
 };
 
 #endif // LIGHTOFFCOMMAND_H

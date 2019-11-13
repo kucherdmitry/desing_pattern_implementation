@@ -1,11 +1,24 @@
 #include "lightoffcommand.h"
 
-LightOffCommand::LightOffCommand(Light *light)
+LightOffCommand::LightOffCommand(Light *obj)
 {
-    this->light = light;
+    this->obj = obj;
+}
+
+LightOffCommand::~LightOffCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void LightOffCommand::execute()
 {
-    this->light->off();
+    this->obj->off();
+}
+
+void LightOffCommand::unexecute()
+{
+
 }

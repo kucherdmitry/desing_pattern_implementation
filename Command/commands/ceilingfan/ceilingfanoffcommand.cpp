@@ -1,14 +1,18 @@
 #include "ceilingfanoffcommand.h"
 
-CeilingFanOffCommand::CeilingFanOffCommand(CeilingFan *ceilFan)
+CeilingFanOffCommand::CeilingFanOffCommand(std::shared_ptr<CeilingFan> &obj)
 {
-    this->ceilFan = ceilFan;
+    this->obj = obj;
+}
+
+CeilingFanOffCommand::~CeilingFanOffCommand()
+{
 }
 
 void CeilingFanOffCommand::execute()
 {
-    this->ceilFan->off();
-    std::cout << "Ceil Fan speed: " << this->ceilFan->getSpeed() << std::endl;
+    this->obj->off();
+    std::cout << "Ceil Fan speed: " << this->obj->getSpeed() << std::endl;
 }
 
 void CeilingFanOffCommand::unexecute()

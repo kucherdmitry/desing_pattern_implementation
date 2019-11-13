@@ -6,14 +6,14 @@
 class GardenLightSetDustTimeCommand : public ICommand
 {
 public:
-    GardenLightSetDustTimeCommand(GardenLight *gardenLight);
-    ~GardenLightSetDustTimeCommand() override = default;
+    GardenLightSetDustTimeCommand(GardenLight *obj);
+    ~GardenLightSetDustTimeCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    GardenLight *gardenLight = nullptr;
+    GardenLight *obj = nullptr;
 };
 
 #endif // GARDENLIGHTSETDUSTTIMECOMMAND_H

@@ -1,11 +1,24 @@
 #include "stereosetcdcommand.h"
 
-StereoSetCDCommand::StereoSetCDCommand(Stereo *stereo)
+StereoSetCDCommand::StereoSetCDCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoSetCDCommand::~StereoSetCDCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoSetCDCommand::execute()
 {
-    this->stereo->setCD();
+    this->obj->setCD();
+}
+
+void StereoSetCDCommand::unexecute()
+{
+
 }

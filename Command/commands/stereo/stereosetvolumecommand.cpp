@@ -1,11 +1,24 @@
 #include "stereosetvolumecommand.h"
 
-StereoSetVolumeCommand::StereoSetVolumeCommand(Stereo *stereo)
+StereoSetVolumeCommand::StereoSetVolumeCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoSetVolumeCommand::~StereoSetVolumeCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoSetVolumeCommand::execute()
 {
-    this->stereo->setVolume();
+    this->obj->setVolume();
+}
+
+void StereoSetVolumeCommand::unexecute()
+{
+
 }

@@ -1,14 +1,18 @@
 #include "ceilingfanlowcommand.h"
 
-CeilingFanLowCommand::CeilingFanLowCommand(CeilingFan *ceilFan)
+CeilingFanLowCommand::CeilingFanLowCommand(std::shared_ptr<CeilingFan> &obj)
 {
-    this->ceilFan = ceilFan;
+    this->obj = obj;
+}
+
+CeilingFanLowCommand::~CeilingFanLowCommand()
+{
 }
 
 void CeilingFanLowCommand::execute()
 {
-    this->ceilFan->low();
-    std::cout << "Ceil Fan speed: " << this->ceilFan->getSpeed() << std::endl;
+    this->obj->low();
+    std::cout << "Ceil Fan speed: " << this->obj->getSpeed() << std::endl;
 }
 
 void CeilingFanLowCommand::unexecute()

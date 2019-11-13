@@ -6,14 +6,14 @@
 class GardenLightManualOffCommand : public ICommand
 {
 public:
-    GardenLightManualOffCommand(GardenLight *gardenLight);
-    ~GardenLightManualOffCommand() override = default;
+    GardenLightManualOffCommand(GardenLight *obj);
+    ~GardenLightManualOffCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    GardenLight *gardenLight = nullptr;
+    GardenLight *obj = nullptr;
 };
 
 #endif // GARDENLIGHTMANUALOFFCOMMAND_H

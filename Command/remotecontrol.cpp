@@ -2,36 +2,37 @@
 
 RemoteControl::RemoteControl()
 {
-    ICommand *noCommand = new class noCommand;
     for(size_t i = 0; i < 7; i++)
     {
-        onCommands.push_back(noCommand);
-        offCommands.push_back(noCommand);
+        onCommands.push_back(nullptr);
+        offCommands.push_back(nullptr);
     }
-    delete noCommand;
 }
 
 RemoteControl::~RemoteControl()
 {
-    for(size_t i = 0; i < 7; i++)
-    {
-        delete onCommands[i];
-        delete offCommands[i];
-    }
+
 }
 
-void RemoteControl::setCommand(size_t slot, ICommand *onCommand, ICommand *offCommand)
+void RemoteControl::setCommand(size_t slot, std::unique_ptr<ICommand> &onCommand, std::unique_ptr<ICommand> &offCommand)
 {
-    onCommands[slot] = onCommand;
-    offCommands[slot] = offCommand;
+    onCommands[slot] = std::move(onCommand);
+    offCommands[slot] = std::move(offCommand);
 }
 
 void RemoteControl::onButtonWasPushed(size_t slot)
 {
-    onCommands[slot]->execute();
+    if(onCommands[slot] != nullptr)
+    {
+        onCommands[slot]->execute();
+    }
+
 }
 
 void RemoteControl::offButtonWasPushed(size_t slot)
 {
-    offCommands[slot]->execute();
+    if(offCommands[slot] != nullptr)
+    {
+        offCommands[slot]->execute();
+    }
 }

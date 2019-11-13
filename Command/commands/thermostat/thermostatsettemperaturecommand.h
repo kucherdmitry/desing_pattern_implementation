@@ -6,12 +6,14 @@
 class ThermostatSetTemperatureCommand : public ICommand
 {
 public:
-    ThermostatSetTemperatureCommand(Thermostat *thermostat);
+    ThermostatSetTemperatureCommand(Thermostat *obj);
+    ~ThermostatSetTemperatureCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    Thermostat *thermostat = nullptr;
+    Thermostat *obj = nullptr;
 };
 
 #endif // THERMOSTATSETTEMPERATURECOMMAND_H

@@ -6,13 +6,14 @@
 class GarageDoorLightOnCommand : public ICommand
 {
 public:
-    GarageDoorLightOnCommand(GarageDoor *garageDoor);
+    GarageDoorLightOnCommand(GarageDoor *obj);
+    ~GarageDoorLightOnCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    GarageDoor *garageDoor = nullptr;
+    GarageDoor *obj = nullptr;
 };
 
 #endif // GARAGEDOORLIGHTONCOMMAND_H

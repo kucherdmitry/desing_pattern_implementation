@@ -6,12 +6,14 @@
 class TVSetVolumeCommand : public ICommand
 {
 public:
-    TVSetVolumeCommand(TV *tv);
+    TVSetVolumeCommand(TV *obj);
+    ~TVSetVolumeCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    TV *tv = nullptr;
+    TV *obj = nullptr;
 };
 
 #endif // TVSETVOLUMECOMMAND_H

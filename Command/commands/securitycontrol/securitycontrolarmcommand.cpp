@@ -1,11 +1,24 @@
 #include "securitycontrolarmcommand.h"
 
-SecurityControlArmCommand::SecurityControlArmCommand(SecurityControl *securityControl)
+SecurityControlArmCommand::SecurityControlArmCommand(SecurityControl *obj)
 {
-    this->securityControl = securityControl;
+    this->obj = obj;
+}
+
+SecurityControlArmCommand::~SecurityControlArmCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void SecurityControlArmCommand::execute()
 {
-    this->securityControl->arm();
+    this->obj->arm();
+}
+
+void SecurityControlArmCommand::unexecute()
+{
+
 }

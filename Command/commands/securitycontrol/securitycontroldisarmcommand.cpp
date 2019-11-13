@@ -1,11 +1,24 @@
 #include "securitycontroldisarmcommand.h"
 
-SecurityControlDisarmCommand::SecurityControlDisarmCommand(SecurityControl *securityControl)
+SecurityControlDisarmCommand::SecurityControlDisarmCommand(SecurityControl *obj)
 {
-    this->securityControl = securityControl;
+    this->obj = obj;
+}
+
+SecurityControlDisarmCommand::~SecurityControlDisarmCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void SecurityControlDisarmCommand::execute()
 {
-    this->securityControl->disarm();
+    this->obj->disarm();
+}
+
+void SecurityControlDisarmCommand::unexecute()
+{
+
 }

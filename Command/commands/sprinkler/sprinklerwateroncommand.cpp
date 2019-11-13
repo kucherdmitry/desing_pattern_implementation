@@ -1,11 +1,24 @@
 #include "sprinklerwateroncommand.h"
 
-SprinklerWaterOnCommand::SprinklerWaterOnCommand(Sprinkler *sprinkler)
+SprinklerWaterOnCommand::SprinklerWaterOnCommand(Sprinkler *obj)
 {
-    this->sprinkler = sprinkler;
+    this->obj = obj;
+}
+
+SprinklerWaterOnCommand::~SprinklerWaterOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void SprinklerWaterOnCommand::execute()
 {
-    this->sprinkler->waterOn();
+    this->obj->waterOn();
+}
+
+void SprinklerWaterOnCommand::unexecute()
+{
+
 }

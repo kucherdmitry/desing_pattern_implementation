@@ -6,12 +6,14 @@
 class SecurityControlDisarmCommand : public ICommand
 {
 public:
-    SecurityControlDisarmCommand(SecurityControl *securityControl);
+    SecurityControlDisarmCommand(SecurityControl *obj);
+    ~SecurityControlDisarmCommand() override;
 
     void execute() override;
+    void unexecute() override;
 
 private:
-    SecurityControl *securityControl = nullptr;
+    SecurityControl *obj = nullptr;
 };
 
 #endif // SECURITYCONTROLDISARMCOMMAND_H

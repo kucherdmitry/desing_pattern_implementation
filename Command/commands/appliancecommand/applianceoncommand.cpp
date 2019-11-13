@@ -1,13 +1,17 @@
 #include "applianceoncommand.h"
 
-ApplianceOnCommand::ApplianceOnCommand(ApplianceControl *appControl)
+ApplianceOnCommand::ApplianceOnCommand(std::shared_ptr<ApplianceControl> &obj)
 {
-    this->appControl = appControl;
+    this->obj = obj;
+}
+
+ApplianceOnCommand::~ApplianceOnCommand()
+{
 }
 
 void ApplianceOnCommand::execute()
 {
-    this->appControl->on();
+    this->obj.get()->on();
 }
 
 void ApplianceOnCommand::unexecute()

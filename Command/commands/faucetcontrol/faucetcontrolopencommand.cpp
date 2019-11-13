@@ -1,13 +1,21 @@
 #include "faucetcontrolopencommand.h"
 
-FaucetControlOpenCommand::FaucetControlOpenCommand(FaucetControl *faucetControl)
+FaucetControlOpenCommand::FaucetControlOpenCommand(FaucetControl *obj)
 {
-    this->faucetControl = faucetControl;
+    this->obj = obj;
+}
+
+FaucetControlOpenCommand::~FaucetControlOpenCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void FaucetControlOpenCommand::execute()
 {
-    this->faucetControl->openValue();
+    this->obj->openValue();
 }
 
 void FaucetControlOpenCommand::unexecute()

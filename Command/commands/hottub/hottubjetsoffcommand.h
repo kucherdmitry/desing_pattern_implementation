@@ -6,13 +6,13 @@
 class HottubJetsOffCommand : public ICommand
 {
 public:
-    HottubJetsOffCommand(Hottub *hottub);
-    ~HottubJetsOffCommand() override = default;
+    HottubJetsOffCommand(Hottub *obj);
+    ~HottubJetsOffCommand() override;
 
     void execute() override;
 
 private:
-    Hottub *hottub = nullptr;
+    Hottub *obj = nullptr;
 };
 
 #endif // HOTTUBJETSOFFCOMMAND_H

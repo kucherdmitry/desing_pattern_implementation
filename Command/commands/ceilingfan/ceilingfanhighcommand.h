@@ -6,14 +6,14 @@
 class CeilingFanHighCommand : public ICommand
 {
 public:
-    CeilingFanHighCommand(CeilingFan *ceilFan);
-    ~CeilingFanHighCommand() override = default;
+    CeilingFanHighCommand(std::shared_ptr<CeilingFan> &obj);
+    ~CeilingFanHighCommand() override;
 
     void execute() override;
     void unexecute() override;
 
 private:
-    CeilingFan *ceilFan = nullptr;
+    std::shared_ptr<CeilingFan> obj = nullptr;
 };
 
 #endif // CEILINGFANHIGHCOMMAND_H

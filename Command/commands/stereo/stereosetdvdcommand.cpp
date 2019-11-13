@@ -1,11 +1,24 @@
 #include "stereosetdvdcommand.h"
 
-StereoSetDVDCommand::StereoSetDVDCommand(Stereo *stereo)
+StereoSetDVDCommand::StereoSetDVDCommand(Stereo *obj)
 {
-    this->stereo = stereo;
+    this->obj = obj;
+}
+
+StereoSetDVDCommand::~StereoSetDVDCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void StereoSetDVDCommand::execute()
 {
-    this->stereo->setDVD();
+    this->obj->setDVD();
+}
+
+void StereoSetDVDCommand::unexecute()
+{
+
 }

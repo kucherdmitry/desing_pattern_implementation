@@ -1,13 +1,21 @@
 #include "hottubjetsoncommand.h"
 
-HottubJetsOnCommand::HottubJetsOnCommand(Hottub *hottub)
+HottubJetsOnCommand::HottubJetsOnCommand(Hottub *obj)
 {
-    this->hottub = hottub;
+    this->obj = obj;
+}
+
+HottubJetsOnCommand::~HottubJetsOnCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void HottubJetsOnCommand::execute()
 {
-    this->hottub->jetsOn();
+    this->obj->jetsOn();
 }
 
 void HottubJetsOnCommand::unexecute()

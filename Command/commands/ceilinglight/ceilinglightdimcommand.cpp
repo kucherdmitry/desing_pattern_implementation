@@ -2,12 +2,20 @@
 
 CeilingLightDimCommand::CeilingLightDimCommand(CeilingLight *ceilLight)
 {
-    this->ceilLight = ceilLight;
+    this->obj = ceilLight;
+}
+
+CeilingLightDimCommand::~CeilingLightDimCommand()
+{
+    if(this->obj != nullptr)
+    {
+        delete this->obj;
+    }
 }
 
 void CeilingLightDimCommand::execute()
 {
-    this->ceilLight->dim();
+    this->obj->dim();
 }
 
 void CeilingLightDimCommand::unexecute()
